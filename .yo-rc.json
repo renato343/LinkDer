@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "Linkder",
+    "packageName": "com.linkder",
+    "packageFolder": "com/linkder",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mssql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "fr",
+      "pt-pt",
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.6.1",
+    "jwtSecretKey": "OGE5ZjMxMzFmNmRiOGY3OTgyNjMzYzk0ZjJhMjM4NmU3MDc2NWE5ZjcyNjcxMjljNzgzMWY0YjUxNDhhODhmOTZmYTcyN2VmZjg2YTYwZmQyZGExMDVmMzY4NGQ5MDRiYjExNGIzZDhjMDY2MWZlMzFmNDAyZjIxZjc5YjE4M2Y="
+  },
+  "git-provider": "GitHub",
+  "git-company": "renato343",
+  "repository-name": "linkder"
+}
