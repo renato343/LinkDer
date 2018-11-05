@@ -1,0 +1,59 @@
+{
+    "name": "Position",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "minSalary",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "maxSalary",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "position"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "language",
+            "otherEntityName": "language",
+            "otherEntityRelationshipName": "position"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "framework",
+            "otherEntityName": "framework",
+            "otherEntityRelationshipName": "position"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105182012",
+    "entityTableName": "position",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "linkder"
+}

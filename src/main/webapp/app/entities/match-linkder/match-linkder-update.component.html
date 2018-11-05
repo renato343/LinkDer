@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-match-linkder-heading" jhiTranslate="linkderApp.match.home.createOrEditLabel">Create or edit a Match</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!match.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="match.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.match.candidate" for="field_candidate">Candidate</label>
+                    <input type="number" class="form-control" name="candidate" id="field_candidate"
+                        [(ngModel)]="match.candidate" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.match.candidateBool" for="field_candidateBool">Candidate Bool</label>
+                    <input type="checkbox" class="form-control" name="candidateBool" id="field_candidateBool"
+                        [(ngModel)]="match.candidateBool" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.match.project" for="field_project">Project</label>
+                    <input type="number" class="form-control" name="project" id="field_project"
+                        [(ngModel)]="match.project" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.match.projectBool" for="field_projectBool">Project Bool</label>
+                    <input type="checkbox" class="form-control" name="projectBool" id="field_projectBool"
+                        [(ngModel)]="match.projectBool" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

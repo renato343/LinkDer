@@ -1,0 +1,80 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="linkderApp.framework.home.title">Frameworks</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-framework-linkder" [routerLink]="['/framework-linkder/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="linkderApp.framework.home.createLabel">
+            Create new Framework
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="frameworks">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="linkderApp.framework.name">Name</span></th>
+            <th><span jhiTranslate="linkderApp.framework.version">Version</span></th>
+            <th><span jhiTranslate="linkderApp.framework.candidate">Candidate</span></th>
+            <th><span jhiTranslate="linkderApp.framework.project">Project</span></th>
+            <th><span jhiTranslate="linkderApp.framework.language">Language</span></th>
+            <th><span jhiTranslate="linkderApp.framework.position">Position</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let framework of frameworks ;trackBy: trackId">
+                <td><a [routerLink]="['/framework-linkder', framework.id, 'view' ]">{{framework.id}}</a></td>
+                <td>{{framework.name}}</td>
+                <td>{{framework.version}}</td>
+                <td>
+                    <div *ngIf="framework.candidate">
+                        <a [routerLink]="['../candidate-linkder', framework.candidate?.id, 'view' ]" >{{framework.candidate?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="framework.project">
+                        <a [routerLink]="['../project-linkder', framework.project?.id, 'view' ]" >{{framework.project?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="framework.language">
+                        <a [routerLink]="['../language-linkder', framework.language?.id, 'view' ]" >{{framework.language?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="framework.position">
+                        <a [routerLink]="['../position-linkder', framework.position?.id, 'view' ]" >{{framework.position?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/framework-linkder', framework.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/framework-linkder', framework.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'framework-linkder/'+ framework.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

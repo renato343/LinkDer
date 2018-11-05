@@ -41,6 +41,23 @@ public class CacheConfiguration {
             cm.createCache(com.linkder.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.linkder.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.linkder.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Candidate.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Candidate.class.getName() + ".languages", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Candidate.class.getName() + ".frameworks", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Company.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Company.class.getName() + ".projects", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Project.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Project.class.getName() + ".languages", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Project.class.getName() + ".frameworks", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Project.class.getName() + ".positions", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Language.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Language.class.getName() + ".frameworks", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Framework.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Location.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Position.class.getName(), jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Position.class.getName() + ".languages", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Position.class.getName() + ".frameworks", jcacheConfiguration);
+            cm.createCache(com.linkder.domain.Match.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,49 @@
+{
+    "name": "Language",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "framework",
+            "otherEntityName": "framework",
+            "otherEntityRelationshipName": "language"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "candidate",
+            "otherEntityName": "candidate",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "position",
+            "otherEntityName": "position",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181105182009",
+    "entityTableName": "language",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "linkder"
+}

@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="candidate">
+            <h2><span jhiTranslate="linkderApp.candidate.detail.title">Candidate</span> {{candidate.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="linkderApp.candidate.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{candidate.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{candidate.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.email">Email</span></dt>
+                <dd>
+                    <span>{{candidate.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{candidate.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.skype">Skype</span></dt>
+                <dd>
+                    <span>{{candidate.skype}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.linkdin">Linkdin</span></dt>
+                <dd>
+                    <span>{{candidate.linkdin}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.salary">Salary</span></dt>
+                <dd>
+                    <span>{{candidate.salary}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="candidate.project">
+                        <a [routerLink]="['/project-linkder', candidate.project?.id, 'view']">{{candidate.project?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.candidate.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="candidate.location">
+                        <a [routerLink]="['/location-linkder', candidate.location?.id, 'view']">{{candidate.location?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/candidate-linkder', candidate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

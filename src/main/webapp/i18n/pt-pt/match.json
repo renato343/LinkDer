@@ -1,0 +1,24 @@
+{
+    "linkderApp": {
+        "match": {
+            "home": {
+                "title": "Matches",
+                "createLabel": "Criar um(a) novo(a) Match",
+                "createOrEditLabel": "Criar ou editar um(a) Match"
+            },
+            "created": "A new Match is created with identifier {{ param }}",
+            "updated": "A Match is updated with identifier {{ param }}",
+            "deleted": "A Match is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Match {{ id }}?"
+            },
+            "detail": {
+                "title": "Match"
+            },
+            "candidate": "Candidate",
+            "candidateBool": "Candidate Bool",
+            "project": "Project",
+            "projectBool": "Project Bool"
+        }
+    }
+}
