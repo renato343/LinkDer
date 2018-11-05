@@ -1,0 +1,75 @@
+entity Candidate {
+	firstName String required,
+	lastName String,
+	email String required,
+	phoneNumber String,
+    skype String required,
+    linkdin String required,
+	salary Long,
+}
+
+entity Company {
+	name String required,
+}
+
+entity Project {
+	projectName String required,
+}
+
+entity Language {
+	name String,
+  version String,
+}
+
+entity Framework {
+	name String,
+  version String
+}
+
+entity Location {
+	id Long,
+	streetAddress String,
+	city String,
+    country String
+}
+
+entity Position {
+	name String,
+    type String,
+	minSalary Long,
+	maxSalary Long,
+}
+
+entity Match{
+	candidate Long,
+    candidateBool Boolean,
+    project Long,
+    projectBool Boolean,
+}
+
+relationship OneToOne {
+    Candidate to Project,
+    Candidate to Location,
+    Company to Location,
+    Project to Location
+    Position to Location
+
+}
+
+relationship OneToMany {
+    Candidate to Language,
+    Candidate to Framework,
+    Company to Project,
+    Project to Language,
+    Project to Framework,
+    Project to Position,
+    Language to Framework,
+    Position to Language,
+    Position to Framework,
+}
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with linkder
