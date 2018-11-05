@@ -1,0 +1,31 @@
+{
+    "linkderApp": {
+        "candidate": {
+            "home": {
+                "title": "Candidates",
+                "createLabel": "Criar um(a) novo(a) Candidate",
+                "createOrEditLabel": "Criar ou editar um(a) Candidate"
+            },
+            "created": "A new Candidate is created with identifier {{ param }}",
+            "updated": "A Candidate is updated with identifier {{ param }}",
+            "deleted": "A Candidate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Candidate {{ id }}?"
+            },
+            "detail": {
+                "title": "Candidate"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phoneNumber": "Phone Number",
+            "skype": "Skype",
+            "linkdin": "Linkdin",
+            "salary": "Salary",
+            "project": "Project",
+            "location": "Location",
+            "language": "Language",
+            "framework": "Framework"
+        }
+    }
+}

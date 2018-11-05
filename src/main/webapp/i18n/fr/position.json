@@ -1,0 +1,28 @@
+{
+    "linkderApp": {
+        "position": {
+            "home": {
+                "title": "Positions",
+                "createLabel": "Créer un nouveau Position",
+                "createOrEditLabel": "Créer ou éditer un Position"
+            },
+            "created": "Un nouveau Position a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Position avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Position avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Position {{ id }} ?"
+            },
+            "detail": {
+                "title": "Position"
+            },
+            "name": "Name",
+            "type": "Type",
+            "minSalary": "Min Salary",
+            "maxSalary": "Max Salary",
+            "location": "Location",
+            "language": "Language",
+            "framework": "Framework",
+            "project": "Project"
+        }
+    }
+}

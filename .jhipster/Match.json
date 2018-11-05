@@ -1,0 +1,32 @@
+{
+    "name": "Match",
+    "fields": [
+        {
+            "fieldName": "candidate",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "candidateBool",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "project",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "projectBool",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181105182013",
+    "entityTableName": "match",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "linkder"
+}

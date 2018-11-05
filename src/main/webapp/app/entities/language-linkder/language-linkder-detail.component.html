@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="language">
+            <h2><span jhiTranslate="linkderApp.language.detail.title">Language</span> {{language.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="linkderApp.language.name">Name</span></dt>
+                <dd>
+                    <span>{{language.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.language.version">Version</span></dt>
+                <dd>
+                    <span>{{language.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.language.candidate">Candidate</span></dt>
+                <dd>
+                    <div *ngIf="language.candidate">
+                        <a [routerLink]="['/candidate-linkder', language.candidate?.id, 'view']">{{language.candidate?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.language.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="language.project">
+                        <a [routerLink]="['/project-linkder', language.project?.id, 'view']">{{language.project?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.language.position">Position</span></dt>
+                <dd>
+                    <div *ngIf="language.position">
+                        <a [routerLink]="['/position-linkder', language.position?.id, 'view']">{{language.position?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/language-linkder', language.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

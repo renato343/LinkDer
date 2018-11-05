@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-framework-linkder-heading" jhiTranslate="linkderApp.framework.home.createOrEditLabel">Create or edit a Framework</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!framework.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="framework.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="framework.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.version" for="field_version">Version</label>
+                    <input type="text" class="form-control" name="version" id="field_version"
+                        [(ngModel)]="framework.version" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.candidate" for="field_candidate">Candidate</label>
+                    <select class="form-control" id="field_candidate" name="candidate" [(ngModel)]="framework.candidate" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="candidateOption.id === framework.candidate?.id ? framework.candidate : candidateOption" *ngFor="let candidateOption of candidates; trackBy: trackCandidateById">{{candidateOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.project" for="field_project">Project</label>
+                    <select class="form-control" id="field_project" name="project" [(ngModel)]="framework.project" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="projectOption.id === framework.project?.id ? framework.project : projectOption" *ngFor="let projectOption of projects; trackBy: trackProjectById">{{projectOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.language" for="field_language">Language</label>
+                    <select class="form-control" id="field_language" name="language" [(ngModel)]="framework.language" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="languageOption.id === framework.language?.id ? framework.language : languageOption" *ngFor="let languageOption of languages; trackBy: trackLanguageById">{{languageOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.framework.position" for="field_position">Position</label>
+                    <select class="form-control" id="field_position" name="position" [(ngModel)]="framework.position" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="positionOption.id === framework.position?.id ? framework.position : positionOption" *ngFor="let positionOption of positions; trackBy: trackPositionById">{{positionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

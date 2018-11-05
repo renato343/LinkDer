@@ -1,0 +1,26 @@
+{
+    "linkderApp": {
+        "framework": {
+            "home": {
+                "title": "Frameworks",
+                "createLabel": "Créer un nouveau Framework",
+                "createOrEditLabel": "Créer ou éditer un Framework"
+            },
+            "created": "Un nouveau Framework a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Framework avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Framework avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Framework {{ id }} ?"
+            },
+            "detail": {
+                "title": "Framework"
+            },
+            "name": "Name",
+            "version": "Version",
+            "candidate": "Candidate",
+            "project": "Project",
+            "language": "Language",
+            "position": "Position"
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="framework">
+            <h2><span jhiTranslate="linkderApp.framework.detail.title">Framework</span> {{framework.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="linkderApp.framework.name">Name</span></dt>
+                <dd>
+                    <span>{{framework.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.framework.version">Version</span></dt>
+                <dd>
+                    <span>{{framework.version}}</span>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.framework.candidate">Candidate</span></dt>
+                <dd>
+                    <div *ngIf="framework.candidate">
+                        <a [routerLink]="['/candidate-linkder', framework.candidate?.id, 'view']">{{framework.candidate?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.framework.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="framework.project">
+                        <a [routerLink]="['/project-linkder', framework.project?.id, 'view']">{{framework.project?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.framework.language">Language</span></dt>
+                <dd>
+                    <div *ngIf="framework.language">
+                        <a [routerLink]="['/language-linkder', framework.language?.id, 'view']">{{framework.language?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="linkderApp.framework.position">Position</span></dt>
+                <dd>
+                    <div *ngIf="framework.position">
+                        <a [routerLink]="['/position-linkder', framework.position?.id, 'view']">{{framework.position?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/framework-linkder', framework.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

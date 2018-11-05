@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-candidate-linkder-heading" jhiTranslate="linkderApp.candidate.home.createOrEditLabel">Create or edit a Candidate</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!candidate.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="candidate.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="candidate.firstName" required/>
+                    <div [hidden]="!(editForm.controls.firstName?.dirty && editForm.controls.firstName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.firstName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="candidate.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="candidate.email" required/>
+                    <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.email?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                        [(ngModel)]="candidate.phoneNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.skype" for="field_skype">Skype</label>
+                    <input type="text" class="form-control" name="skype" id="field_skype"
+                        [(ngModel)]="candidate.skype" required/>
+                    <div [hidden]="!(editForm.controls.skype?.dirty && editForm.controls.skype?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.skype?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.linkdin" for="field_linkdin">Linkdin</label>
+                    <input type="text" class="form-control" name="linkdin" id="field_linkdin"
+                        [(ngModel)]="candidate.linkdin" required/>
+                    <div [hidden]="!(editForm.controls.linkdin?.dirty && editForm.controls.linkdin?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.linkdin?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.salary" for="field_salary">Salary</label>
+                    <input type="number" class="form-control" name="salary" id="field_salary"
+                        [(ngModel)]="candidate.salary" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.project" for="field_project">Project</label>
+                    <select class="form-control" id="field_project" name="project" [(ngModel)]="candidate.project">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="projectOption.id === candidate.project?.id ? candidate.project : projectOption" *ngFor="let projectOption of projects; trackBy: trackProjectById">{{projectOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="linkderApp.candidate.location" for="field_location">Location</label>
+                    <select class="form-control" id="field_location" name="location" [(ngModel)]="candidate.location">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationOption.id === candidate.location?.id ? candidate.location : locationOption" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
