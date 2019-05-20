@@ -1,6 +1,7 @@
 package com.linkder.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.checkerframework.common.aliasing.qual.Unique;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 

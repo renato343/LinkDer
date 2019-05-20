@@ -25,7 +25,7 @@
                     <label class="form-control-label" jhiTranslate="linkderApp.company.location" for="field_location">Location</label>
                     <select class="form-control" id="field_location" name="location" [(ngModel)]="company.location">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="locationOption.id === company.location?.id ? company.location : locationOption" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.id}}</option>
+                        <option [ngValue]="locationOption.id === company.location?.id ? company.location : locationOption" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.city}}</option>
                     </select>
                 </div>
             </div>
